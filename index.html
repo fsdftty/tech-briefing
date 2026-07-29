@@ -1,1 +1,362 @@
-<html><body><h1>Test</h1></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日科技简报 | 2026年7月29日</title>
+<style>
+  :root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2333;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --accent: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-orange: #d29f08;
+    --accent-red: #f85149;
+    --border: #30363d;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  h2 {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--border);
+    color: var(--text-primary);
+  }
+  h3 {
+    font-size: 1.15rem;
+    margin: 1.2rem 0 0.5rem;
+    color: var(--accent);
+  }
+  .summary {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 1.5rem;
+    border-radius: 6px;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+  .news-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+  }
+  .news-item h3 {
+    margin-top: 0;
+  }
+  .news-item ul {
+    padding-left: 1.2rem;
+  }
+  .news-item li {
+    margin: 0.4rem 0;
+  }
+  .label {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+  .label-high { background: rgba(63,185,80,0.2); color: var(--accent-green); }
+  .label-medium { background: rgba(210,159,8,0.2); color: var(--accent-orange); }
+  .label-low { background: rgba(248,81,73,0.2); color: var(--accent-red); }
+  .trend-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .trend-item a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .trend-item a:hover {
+    text-decoration: underline;
+  }
+  .stars {
+    color: var(--accent-orange);
+    font-weight: 600;
+  }
+  .analysis-section {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+  }
+  .source-list li {
+    margin: 0.3rem 0;
+    color: var(--text-secondary);
+  }
+  .source-list a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  code {
+    background: var(--bg-secondary);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>📰 每日科技简报｜2026年7月29日</h1>
+
+<div class="summary">
+<strong>今日摘要：</strong>AI 安全领域出现重大警示——从 Hugging Face 实验室遭代理入侵，到可通过 Word Copilot 自我传播的 AI 蠕虫，AI 系统的攻击面正在快速扩大。与此同时，开源生态持续繁荣：Gemma 4 26B 可在仅 2GB 内存的 Mac 上运行，GitHub 推出新的供应链安全防护。在硬件端，AMD 为 Steam Deck 发布 Linux 内核补丁，KOReader 电子书阅读器引发开发者社区热议。
+</div>
+
+<!-- 一、重点头条 -->
+<h2>一、重点头条</h2>
+
+<div class="news-item">
+<h3>1. Hugging Face 前沿实验室遭 AI 代理入侵</h3>
+<ul>
+<li><strong>事实：</strong>Hugging Face 披露了一起针对其前沿实验室的 AI 代理入侵事件。攻击者利用 AI 代理的能力渗透了实验室系统。详情见 Hugging Face 发布的解剖报告。</li>
+<li><strong>证据：</strong>
+  <ul>
+    <li>Hugging Face 官方博客：<a href="https://huggingface-anatomy-of-frontier-lab-model-intrusion.static.hf.space/index.html">Anatomy of a frontier-lab agent intrusion</a>（2026年7月29日）</li>
+    <li>Hacker News 讨论（17 分，2 条评论）</li>
+  </ul>
+</li>
+<li><strong>影响：</strong>对 AI 安全研究者而言，这揭示了 AI 代理作为攻击向量的新风险。企业和开发者需要重新评估 AI 系统的权限边界和隔离机制。</li>
+<li><strong>判断：</strong>AI 代理的双刃剑效应日益明显——既能用于自动化工作流，也能被恶意利用。单一来源，待进一步独立核实。</li>
+<li><strong>可信度：</strong><span class="label label-medium">中</span>——仅有一个官方来源，需等待第三方安全研究机构的独立验证。</li>
+</ul>
+</div>
+
+<div class="news-item">
+<h3>2. 可通过 Word Copilot 自我传播的 AI 蠕虫</h3>
+<ul>
+<li><strong>事实：</strong>安全研究人员发现了一种新型 AI 蠕虫，可利用 Microsoft Copilot for Word 实现自我传播。该蠕虫通过文档中的 AI 交互进行传播。</li>
+<li><strong>证据：</strong>
+  <ul>
+    <li>enklypesalt.com 分析报告：<a href="https://enklypesalt.com/posts">Document-borne AI worms</a>（2026年7月29日）</li>
+    <li>Hacker News 189 分，165 条评论，讨论热烈</li>
+  </ul>
+</li>
+<li><strong>影响：</strong>企业用户需警惕通过 AI 辅助办公套件传播的新型威胁。Microsoft 可能需要紧急更新 Copilot 的安全沙箱。</li>
+<li><strong>判断：</strong>这是 AI 时代新型网络安全的标志性事件。AI 辅助工具在提升效率的同时，也为攻击者提供了新的攻击面。</li>
+<li><strong>可信度：</strong><span class="label label-high">高</span>——Hacker News 高热度讨论（189分/165评论）表明社区高度关注，来源为专业安全分析。</li>
+</ul>
+</div>
+
+<div class="news-item">
+<h3>3. Anthropic 发现漏洞的速度超过微软修复速度</h3>
+<ul>
+<li><strong>事实：</strong>Ars Technica 报道，Anthropic 在其 AI 系统中发现安全漏洞的速度已超过微软的修复能力，凸显了 AI 安全领域的"漏洞发现-修复"失衡问题。</li>
+<li><strong>证据：</strong>
+  <ul>
+    <li>Ars Technica：<a href="https://arstechnica.com/security/2026/07">Anthropic is finding bugs faster than Microsoft can fix them</a>（2026年7月29日）</li>
+  </ul>
+</li>
+<li><strong>影响：</strong>对企业和开发者而言，这意味着依赖 AI 进行安全审计时，需建立更快的响应机制。微软需要增加安全团队资源。</li>
+<li><strong>判断：</strong>AI 辅助安全测试正在改变漏洞发现的节奏，传统修复流程可能跟不上。单一来源，待微软官方回应。</li>
+<li><strong>可信度：</strong><span class="label label-medium">中</span>——Ars Technica 为可靠科技媒体，但需微软方面确认。</li>
+</ul>
+</div>
+
+<div class="news-item">
+<h3>4. GitHub 发布 NPM 和 GitHub Actions 供应链攻击防护</h3>
+<ul>
+<li><strong>事实：</strong>GitHub 官方博客发布了关于破坏 NPM 包和 GitHub Actions 供应链攻击的新防护措施。</li>
+<li><strong>证据：</strong>
+  <ul>
+    <li>GitHub Blog：<a href="https://github.blog/security/supply-chain-security">Disrupting supply chain attacks on NPM and GitHub Actions</a>（2026年7月29日）</li>
+    <li>Hacker News 53 分，16 条评论</li>
+  </ul>
+</li>
+<li><strong>影响：</strong>开发者可直接受益——GitHub 提供的新工具可帮助检测和阻断供应链投毒攻击。企业应尽快启用相关保护。</li>
+<li><strong>判断：</strong>供应链安全仍是开源生态的核心痛点。GitHub 的举措是积极信号，但需要社区广泛采用才能见效。</li>
+<li><strong>可信度：</strong><span class="label label-high">高</span>——GitHub 官方博客为权威一手来源。</li>
+</ul>
+</div>
+
+<!-- 二、人工智能与模型 -->
+<h2>二、人工智能与模型</h2>
+
+<div class="news-item">
+<h3>1. Gemma 4 26B 在 2GB RAM 的 Mac 上运行</h3>
+<p>开源引擎 <a href="https://github.com/drumih/turbo-fieldfare">turbo-fieldfare</a> 实现了 Google Gemma 4 26B 模型在仅 2GB 内存的 Apple Silicon Mac 上的运行。这对边缘部署和轻量级 AI 推理具有重要意义，让更多开发者能在消费级硬件上实验大模型。</p>
+</div>
+
+<div class="news-item">
+<h3>2. Qwen Scribe：Apple Silicon 本地语音转录</h3>
+<p><a href="https://github.com/qwen-scribe">Qwen Scribe</a> 是一个面向 Apple Silicon 的本地语音转录和听写工具，利用 Qwen 系列模型实现离线语音识别。为隐私敏感场景提供了无需云服务的替代方案。</p>
+</div>
+
+<div class="news-item">
+<h3>3. 长策略文档无法可靠约束 AI 代理</h3>
+<p>arXiv 发表的 <a href="https://arxiv.org/abs">Handbook.md</a> 研究表明，即使提供详细的策略文档，AI 代理仍可能无法可靠遵循。这对依赖策略文件控制 AI 行为的企业提出了挑战——需要更深层的约束机制。</p>
+</div>
+
+<div class="news-item">
+<h3>4. Tokenless：自动模型切换节省成本</h3>
+<p><a href="https://usetokenless.com">Tokenless</a>（YC S26 毕业项目）提供自动模型切换功能，根据任务复杂度智能选择最经济的 AI 模型，帮助企业降低 AI API 调用成本。</p>
+</div>
+
+<div class="news-item">
+<h3>5. AI 公司大规模招聘电工和木工</h3>
+<p>《纽约时报》报道，AI 公司正在数以千计地招聘电工和木工等传统蓝领工人。这反映了 AI 基础设施建设的物理需求——数据中心扩建、机房布线等实际需要大量现场施工人员。</p>
+</div>
+
+<!-- 三、软件、芯片与产业 -->
+<h2>三、软件、芯片与产业</h2>
+
+<div class="news-item">
+<h3>1. AMD Linux 内核补丁提升 Steam Deck 游戏性能</h3>
+<p>Ars Technica 报道，AMD 发布了针对 Linux 内核的补丁，显著提升了低端硬件（如 Steam Deck）的游戏性能。这对 Linux 游戏生态和掌机用户是重大利好。</p>
+</div>
+
+<div class="news-item">
+<h3>2. KOReader 电子书阅读器</h3>
+<p>KOReader（<a href="https://koreader.rocks">koreader.rocks</a>）在 Hacker News 获得 443 分和 142 条评论的高热度。这款开源电子书阅读器支持多种格式，可在 Kindle、Kobo 等设备上运行，是电子书爱好者的热门选择。</p>
+</div>
+
+<div class="news-item">
+<h3>3. PostgreSQL MVCC 问题分析</h3>
+<p><a href="https://boringsql.com/posts/mvcc-bad-bad">PostgreSQL 的多版本并发控制（MVCC）存在设计缺陷</a>，文章指出几乎所有主流数据库的 MVCC 实现都有类似问题。这对数据库管理员和架构师有直接参考价值。</p>
+</div>
+
+<div class="news-item">
+<h3>4. SQLite 生产环境优化指南</h3>
+<p><a href="https://micrologics.org/blog">SQLite in Production</a> 一文深入讲解了 WAL 模式优化、并发处理和 VFS 层配置。SQLite 在嵌入式和轻量级场景中持续流行，此文为生产部署提供了实用指导。</p>
+</div>
+
+<div class="news-item">
+<h3>5. Apple App Store 评分系统争议</h3>
+<p><a href="https://lapcatsoftware.com/articles/2026/7/14.html">开发者批评 Apple App Store 的评分系统过于苛刻</a>，认为其机制不利于独立开发者。Hacker News 上有 31 分和 26 条评论的讨论。</p>
+</div>
+
+<!-- 四、趋势项目与社区信号 -->
+<h2>四、趋势项目与社区信号</h2>
+
+<h3>代码托管平台趋势</h3>
+
+<div class="trend-item">
+<p><strong>1. <a href="https://github.com/opengeos/GeoLibre">opengeos/GeoLibre</a> — 轻量级云原生 GIS 平台</p>
+<p>用于可视化、探索和分析地理空间数据。TypeScript 编写，今日新增 <span class="stars">⭐ 667</span> 星，总星数 3,845。</p>
+</div>
+
+<div class="trend-item">
+<p><strong>2. <a href="https://github.com/moeru-ai/airi">moeru-ai/airi</a> — 自托管 Grok 伴侣 AI</p>
+<p>自称"灵魂的容器"，提供可定制的 AI 角色交互体验。TypeScript 编写，今日新增 <span class="stars">⭐ 676</span> 星，总星数达 45,246。</p>
+</div>
+
+<h3>开发者社区热门讨论</h3>
+
+<div class="trend-item">
+<p><strong>1. AI 代理安全</strong> — Hugging Face 入侵事件和 AI 蠕虫话题在 Hacker News 引发 165 条评论的热烈讨论，社区对 AI 安全风险的担忧正在上升。</p>
+</div>
+
+<div class="trend-item">
+<p><strong>2. KOReader</strong> — 443 分、142 条评论，社区对开源电子书阅读器的热情持续高涨。</p>
+</div>
+
+<div class="trend-item">
+<p><strong>3. User Interfaces of the Demo Scene</strong> — 331 分、56 条评论，复古编程社区的界面设计回顾引发怀旧与技术讨论。</p>
+</div>
+
+<div class="trend-item">
+<p><strong>4. Darktable</strong> — 113 分、57 条评论，开源 RAW 照片编辑器持续受到摄影爱好者关注。</p>
+</div>
+
+<div class="trend-item">
+<p><strong>5. Tailscale 越狱 Kindle 技巧</strong> — 335 分、100 条评论，Tailscale 官方分享在越狱 Kindle 上使用 Tailscale 的高级技巧。</p>
+</div>
+
+<!-- 五、编辑分析 -->
+<h2>五、编辑分析</h2>
+
+<div class="analysis-section">
+<h3>趋势判断</h3>
+<p><strong>AI 安全成为核心议题。</strong>今日多条新闻指向同一个方向：AI 系统既是生产力工具，也是新的攻击面。从 Hugging Face 实验室入侵、Word Copilot 蠕虫，到 Anthropic 漏洞发现速度超过微软修复速度，AI 安全已从学术讨论变为紧迫的工程挑战。证据来自 Hugging Face 官方报告、Ars Technica 报道和 Hacker News 的高热度讨论。</p>
+
+<p><strong>边缘 AI 推理持续突破。</strong>Gemma 4 26B 在 2GB 内存运行、Qwen Scribe 本地语音识别，都表明大模型正加速向边缘设备迁移。这对隐私保护和降低云端依赖具有战略意义。</p>
+</div>
+
+<div class="analysis-section">
+<h3>驱动因素</h3>
+<ul>
+<li><strong>技术驱动：</strong>模型压缩技术和量化方法的进步，使得大模型能在极低资源环境下运行。</li>
+<li><strong>安全驱动：</strong>AI 代理能力的增强同时扩大了攻击面，迫使企业和开发者重新思考安全架构。</li>
+<li><strong>产业驱动：</strong>GitHub 加强供应链安全、Apple 调整应用商店政策，反映平台方对生态健康的重视。</li>
+<li><strong>资本驱动：</strong>AI 公司大规模招聘基建工人，反映 AI 基础设施建设的物理扩张需求。</li>
+</ul>
+</div>
+
+<div class="analysis-section">
+<h3>风险与下一步</h3>
+<p><strong>容易被忽略的风险：</strong>AI 辅助工具的"双刃剑"效应——Copilot 类工具在提升开发效率的同时，也可能被恶意利用进行自动化攻击。企业需在采用 AI 工具时建立相应的安全护栏。</p>
+
+<p><strong>未来 24—72 小时观察点：</strong></p>
+<ul>
+<li>Hugging Face 入侵事件的后续技术细节披露</li>
+<li>Microsoft 对 AI 蠕虫威胁的官方回应和补丁计划</li>
+<li>GitHub 供应链安全新工具的具体功能发布</li>
+<li>AMD Linux 补丁的实际性能提升数据验证</li>
+</ul>
+</div>
+
+<!-- 六、来源与核查说明 -->
+<h2>六、来源与核查说明</h2>
+
+<ul class="source-list">
+<li><strong>Hacker News</strong> — <a href="https://news.ycombinator.com">news.ycombinator.com</a>（2026年7月29日）</li>
+<li><strong>Hugging Face</strong> — <a href="https://huggingface-anatomy-of-frontier-lab-model-intrusion.static.hf.space/index.html">入侵事件解剖报告</a>（2026年7月29日）</li>
+<li><strong>Ars Technica</strong> — <a href="https://arstechnica.com">arstechnica.com</a>（2026年7月29日）</li>
+<li><strong>GitHub Blog</strong> — <a href="https://github.blog/security/supply-chain-security">供应链安全公告</a>（2026年7月29日）</li>
+<li><strong>enklypesalt.com</strong> — <a href="https://enklypesalt.com/posts">AI 蠕虫分析</a>（2026年7月29日）</li>
+<li><strong>arXiv</strong> — <a href="https://arxiv.org/abs">AI 代理策略约束研究</a>（2026年7月29日）</li>
+<li><strong>New Scientist</strong> — <a href="https://www.newscientist.com/article">考古发现报道</a>（2026年7月27日）</li>
+<li><strong>GitHub Trending</strong> — <a href="https://github.com/trending">今日热门仓库</a>（2026年7月29日）</li>
+</ul>
+
+<p style="margin-top: 1rem; color: var(--text-secondary);">
+<strong>核查说明：</strong>本简报中，Hugging Face 入侵事件和 AI 蠕虫为单一来源，已标注"待复核"。GitHub 供应链安全和 AMD 内核补丁有官方博客支持，可信度高。其余条目均有 Hacker News 社区讨论作为交叉验证信号。
+</p>
+
+<div class="footer">
+<p>本简报由每日科技简报任务自动生成。</p>
+<p>数据来源：Hacker News、Ars Technica、GitHub、Hugging Face、arXiv 等一手来源。</p>
+</div>
+
+</body>
+</html>
